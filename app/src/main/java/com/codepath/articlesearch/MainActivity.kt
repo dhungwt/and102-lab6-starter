@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.search -> fragment = articleListFragment
             }
             // Call helper method to swap the FrameLayout with the fragment
-            replaceFragment(ArticleListFragment())
+            replaceFragment(fragment)
             true
     }
 
@@ -59,10 +59,10 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-    private fun replaceFragment(articleListFragment: ArticleListFragment) {
+    private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.article_frame_layout, articleListFragment)
+        fragmentTransaction.replace(R.id.article_frame_layout, fragment)
         fragmentTransaction.commit()
     }
 }
